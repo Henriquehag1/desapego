@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Bikes Trek, roupas iQuê, Nomad, Woom e Kupaa, capacetes, sapatilhas e acessórios usados em perfeito estado. Pix ou até 12x. Retirada em São Paulo.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Desapego do Pedal">
+<meta property="og:description" content="Bikes Trek, roupas, capacetes, sapatilhas e acessórios de ciclismo. Pix ou até 12x. Retirada em São Paulo.">
+<meta property="og:url" content="https://henriquehag1.github.io/desapego/">
+<meta property="og:image" content="https://henriquehag1.github.io/desapego/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#15233d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315233d'/%3E%3Ccircle cx='19' cy='40' r='10' fill='none' stroke='%23e25a1c' stroke-width='5'/%3E%3Ccircle cx='45' cy='40' r='10' fill='none' stroke='%23e25a1c' stroke-width='5'/%3E%3Cpath d='M19 40 29 24h12l4 16M29 24l6 16' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Desapego do Pedal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: faixa azul-marinho de largada no topo, grade de cards como números de peito, sacola fixa no rodapé do celular */
+:root{
+  --bg:#eef0f2; --surface:#ffffff; --ink:#131a24; --muted:#5a6573; --line:#d7dce2;
+  --navy:#15233d; --navy-ink:#f2f4f7; --accent:#e25a1c; --accent-ink:#ffffff;
+  --ok:#1f7a4d; --warn:#b26a00; --sold:#8a8f98;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c121b; --surface:#141c28; --ink:#e7ebf1; --muted:#97a3b4; --line:#263244;
+  --navy:#1a2a47; --navy-ink:#f2f4f7; --accent:#ff7638; --accent-ink:#1a0d05;
+  --ok:#4cc38a; --warn:#f0a73a; --sold:#6d7684; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c121b; --surface:#141c28; --ink:#e7ebf1; --muted:#97a3b4; --line:#263244;
+  --navy:#1a2a47; --navy-ink:#f2f4f7; --accent:#ff7638; --accent-ink:#1a0d05;
+  --ok:#4cc38a; --warn:#f0a73a; --sold:#6d7684; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Topo */
+.hero{background:var(--navy);color:var(--navy-ink)}
+.hero .wrap{padding-block:28px 24px;display:grid;gap:14px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,8vw,72px);line-height:.92;margin:0;letter-spacing:-.01em;text-wrap:balance;text-transform:uppercase}
+h1 span{color:var(--accent)}
+.lede{max-width:60ch;margin:0;opacity:.9}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px}
+.facts b{font-family:var(--f-display);font-size:20px;font-weight:600;letter-spacing:.02em;margin-right:4px}
+
+/* Barra de filtros */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{padding-block:10px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:14px;white-space:nowrap;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .n{font-family:var(--f-mono);font-size:11px;opacity:.6;margin-left:4px}
+.sizes .chip{font-family:var(--f-mono);font-size:12px;padding:5px 10px}
+.cartbtn{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:8px 16px;font-weight:600}
+.cartbtn .count{font-family:var(--f-mono);font-size:12px;background:color-mix(in srgb,var(--accent-ink) 22%,transparent);border-radius:999px;padding:1px 7px}
+
+/* Grade */
+main .wrap{padding-block:22px 120px}
+.section-h{font-family:var(--f-display);font-size:26px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin:26px 0 12px;display:flex;align-items:baseline;gap:10px}
+.section-h:first-child{margin-top:4px}
+.section-h small{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;min-width:0}
+.card:hover .ph img{transform:scale(1.03)}
+.ph{position:relative;aspect-ratio:4/5;background:var(--line);overflow:hidden;max-width:100%}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.bib{position:absolute;top:8px;left:8px;background:var(--surface);color:var(--ink);font-family:var(--f-mono);font-size:11px;border-radius:4px;padding:2px 6px;border:1px solid var(--line)}
+.status{position:absolute;inset:auto 8px 8px auto;font-size:12px;font-weight:600;border-radius:4px;padding:2px 8px;color:#fff}
+.status.reservado{background:var(--warn)} .status.vendido{background:var(--sold)}
+.card.is-vendido .ph img{filter:grayscale(1);opacity:.55}
+.body{padding:10px 12px 12px;display:grid;gap:4px;flex:1}
+.name{font-weight:600;line-height:1.25;font-size:15px}
+.size{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.price{margin-top:auto;padding-top:6px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price strong{font-family:var(--f-display);font-size:26px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.price span{font-size:12px;color:var(--muted)}
+.inst{font-size:12px;color:var(--muted)}
+.empty{padding:40px 0;color:var(--muted)}
+
+/* Como funciona */
+.how{margin-top:40px;border-top:1px solid var(--line);padding-top:24px;display:grid;gap:14px}
+.how ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;counter-reset:s}
+.how li{counter-increment:s;display:grid;gap:4px;min-width:0}
+.how li::before{content:counter(s);font-family:var(--f-display);font-size:34px;font-weight:700;color:var(--accent);line-height:1}
+.how h3{margin:0;font-size:16px}
+.how p{margin:0;color:var(--muted);font-size:14.5px}
+.note{font-size:13px;color:var(--muted);max-width:75ch}
+
+/* Diálogos */
+dialog{border:0;padding:0;background:var(--surface);color:var(--ink);max-width:min(980px,100vw);width:100%;max-height:100dvh;border-radius:14px}
+dialog::backdrop{background:rgba(5,10,18,.6)}
+@media (max-width:700px){dialog{border-radius:0;height:100dvh;max-height:100dvh;margin:0}}
+.pd{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+@media (max-width:700px){.pd{grid-template-columns:1fr}}
+.gallery{background:var(--bg);min-width:0}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides img{flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:contain;scroll-snap-align:center;background:var(--bg);max-width:100%}
+.thumbs{display:flex;gap:6px;padding:8px;overflow-x:auto}
+.thumbs button{flex:0 0 54px;height:64px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--accent)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.info{padding:22px max(20px,env(safe-area-inset-right,0px)) 22px 22px;display:grid;gap:14px;align-content:start;min-width:0;overflow-y:auto}
+.info h2{font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+.info .price strong{font-size:38px}
+.info .desc{margin:0}
+.specs{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px}
+.specs dt{color:var(--muted)}
+.specs dd{margin:0}
+.ref{font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:10px 18px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.close{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:20px;line-height:1}
+.dlg-inner{position:relative}
+
+/* Sacola */
+#cart{max-width:520px;margin-right:0;height:100dvh;max-height:100dvh;border-radius:0}
+.cart{display:flex;flex-direction:column;height:100%}
+.cart header{padding:18px 20px;border-bottom:1px solid var(--line)}
+.cart header h2{font-family:var(--f-display);font-size:28px;margin:0;text-transform:uppercase}
+.cart-list{flex:1;overflow-y:auto;padding:8px 20px;display:grid;gap:10px;align-content:start}
+.line{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding-block:8px}
+.line img{width:56px;height:68px;object-fit:cover;border-radius:6px}
+.line .t{font-weight:600;font-size:14.5px;line-height:1.25}
+.line .s{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.line .v{font-family:var(--f-display);font-size:20px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.line .rm{background:none;border:0;color:var(--muted);font-size:12.5px;text-decoration:underline;padding:0}
+.checkout{border-top:1px solid var(--line);padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:12px;background:var(--bg)}
+.total{display:flex;justify-content:space-between;align-items:baseline}
+.total strong{font-family:var(--f-display);font-size:32px;font-variant-numeric:tabular-nums}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pay label{border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:2px;background:var(--surface);cursor:pointer}
+.pay input{position:absolute;opacity:0;pointer-events:none}
+.pay label:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.pay label:has(input:focus-visible){outline:2px solid var(--accent)}
+.pay b{font-size:15px}
+.pay span{font-size:12.5px;color:var(--muted)}
+.field{display:grid;gap:4px}
+.field label{font-size:13px;color:var(--muted)}
+.field input,.field textarea{border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:var(--surface);width:100%}
+.wa{justify-content:center;text-align:center}
+.alt{font-size:12.5px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.alt button{background:none;border:0;padding:0;text-decoration:underline;color:var(--ink);font-size:12.5px}
+.alt code{font-family:var(--f-mono);user-select:all}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;z-index:20}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Ciclismo · usados em perfeito estado · São Paulo</div>
+    <h1>Desapego <span>do Pedal</span></h1>
+    <p class="lede">Duas bikes Trek, roupas iQuê, Nomad, Woom e Kupaa, capacetes, sapatilhas e acessórios. Monte sua sacola com um ou vários itens e envie o pedido pelo WhatsApp.</p>
+    <div class="facts"><div><b id="f-n">31</b>itens</div><div><b>Pix</b>ou até 12x no cartão</div><div><b>Retirada</b>em São Paulo</div></div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="chips" id="cats" role="group" aria-label="Categorias"></div>
+    <button class="cartbtn" id="open-cart" type="button">Sacola <span class="count" id="cart-count">0</span></button>
+    <div class="chips sizes" id="sizes" role="group" aria-label="Tamanho de roupa"></div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div id="list"></div>
+    <section class="how" aria-labelledby="how-h">
+      <h2 class="section-h" id="how-h">Como comprar</h2>
+      <ol>
+        <li><h3>Escolha</h3><p>Abra o item para ver todas as fotos e detalhes. Adicione um ou vários à sacola.</p></li>
+        <li><h3>Envie o pedido</h3><p>Na sacola, escolha Pix ou cartão e toque em enviar. A mensagem com os itens abre no WhatsApp.</p></li>
+        <li><h3>Confirmação e pagamento</h3><p>Confirmo a disponibilidade e envio a chave Pix ou o link de pagamento InfinitePay em até 12x.</p></li>
+        <li><h3>Retirada</h3><p>Combinamos dia e horário para a retirada em São Paulo. Os itens ficam reservados após o pagamento.</p></li>
+      </ol>
+      <p class="note">Preços no Pix. No cartão, o parcelamento em até 12x é feito pelo link da InfinitePay, com os juros das parcelas por conta do comprador; o valor de cada parcela aparece no próprio link antes de pagar. Por segurança, pague somente pela chave Pix ou pelo link enviados pelo WhatsApp (11) 98975-9970; não aceite pedidos de pagamento vindos de outro número. Itens usados, vendidos no estado das fotos. Referências de preço de novo vêm dos sites oficiais e lojas, consultados em outubro de 2026.</p>
+    </section>
+  </div>
+</main>
+
+<dialog id="pd" aria-labelledby="pd-title"><div class="dlg-inner" id="pd-body"></div></dialog>
+
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="cart">
+    <header><button class="close" type="button" data-close aria-label="Fechar sacola">×</button><h2 id="cart-title">Sua sacola</h2></header>
+    <div class="cart-list" id="cart-list"></div>
+    <form class="checkout" id="checkout">
+      <div class="total"><span>Total no Pix</span><strong id="cart-total">R$ 0</strong></div>
+      <div class="pay" role="radiogroup" aria-label="Forma de pagamento">
+        <label><input type="radio" name="pay" id="pay-pix" value="pix" checked><b>Pix</b><span>Valor do anúncio</span></label>
+        <label><input type="radio" name="pay" id="pay-card" value="card"><b>Cartão até 12x</b><span>Link InfinitePay, juros das parcelas</span></label>
+      </div>
+      <div class="field"><label for="buyer">Seu nome</label><input id="buyer" autocomplete="name" placeholder="Como posso te chamar?"></div>
+      <div class="field"><label for="obs">Observação (opcional)</label><textarea id="obs" rows="2" placeholder="Melhor dia para retirada, dúvidas..."></textarea></div>
+      <a class="btn primary wa" id="wa" href="#" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
+      <div class="alt">Se o WhatsApp não abrir, chame no <code id="wa-num">(11) 98975-9970</code> e cole o pedido: <button type="button" id="copy">copiar pedido</button></div>
+    </form>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const WA = "5511989759970";
+const CATS = {bike:"Bicicletas",roupa:"Roupas",capacete:"Capacetes",sapatilha:"Sapatilhas",acess:"Acessórios e eletrônicos"};
+/* status: "disponivel" | "reservado" | "vendido" */
+const ITEMS = [
+ {id:"01",cat:"bike",name:"Trek Domane AL 4 Gen 4",size:"54 cm",price:9900,novo:14699,novoNote:"Domane AL 4 Gen 4 nova no site da Trek Brasil",photos:13,
+  desc:"Bike de estrada endurance, confortável para pedais longos. Quadro de alumínio com garfo de carbono, Shimano Tiagra 2x10 e freios a disco hidráulicos. Comprada em março de 2025, com nota fiscal.",
+  specs:[["Tamanho","54 cm"],["Cor","Branca"],["Grupo","Shimano Tiagra 2x10"],["Freios","Disco hidráulico"],["Garfo","Carbono"],["Nota fiscal","Março de 2025"]],
+  extra:"Vendida na montagem de fábrica. Acessórios que aparecem nas fotos não acompanham."},
+ {id:"02",cat:"bike",name:"Trek Madone SL 5 Gen 8 (2025)",size:"L / 58 cm",price:24900,novo:28500,novoNote:"Madone SL 5 Gen 8 nova no site da Trek Brasil",photos:12,
+  desc:"Bike aero de estrada da 8ª geração, modelo 2025, na cor Matte Deep Smoke. Shimano 105 mecânico 2x12, rodas de alumínio e selim Bontrager Verse. Comprada em março de 2025, com nota fiscal.",
+  specs:[["Tamanho","L / 58 cm"],["Ano","2025"],["Cor","Matte Deep Smoke"],["Grupo","Shimano 105 mecânico 2x12"],["Rodas","Alumínio"],["Selim","Bontrager Verse"],["Nota fiscal","Março de 2025"]],
+  extra:"Garmin, pedais Look, caramanholas RSL Aero e suporte de chão estão à venda separadamente neste catálogo. Farol não acompanha."},
+ {id:"03",cat:"roupa",name:"Jersey iQuê manga longa caramelo",size:"M",price:390,novo:797,novoNote:"jersey iQuê manga longa atual, outra cor",photos:3,
+  desc:"Jersey de manga longa iQuê na cor caramelo, com detalhes laranja na gola e na barra. Zíper inteiro e bolsos traseiros.",specs:[["Tamanho","M"],["Marca","iQuê"],["Modelagem","Masculina"]]},
+ {id:"04",cat:"roupa",name:"Jersey iQuê manga curta preta",size:"M",price:350,novo:697,novoNote:"jersey iQuê manga curta atual",photos:3,
+  desc:"Jersey iQuê de manga curta preta com acabamento laranja na gola e na barra. Zíper inteiro e três bolsos traseiros.",specs:[["Tamanho","M"],["Marca","iQuê"],["Modelagem","Masculina"]]},
+ {id:"05",cat:"roupa",name:"Jersey iQuê manga curta branca",size:"M",price:320,novo:697,novoNote:"jersey iQuê ClassiQ branca atual",photos:3,
+  desc:"Jersey iQuê de manga curta branca com detalhes laranja. Zíper inteiro e bolsos traseiros.",specs:[["Tamanho","M"],["Marca","iQuê"],["Modelagem","Masculina"]]},
+ {id:"16",cat:"roupa",name:"Jersey iQuê manga curta branca",size:"PP",price:320,novo:697,novoNote:"jersey iQuê ClassiQ branca atual",photos:3,
+  desc:"Jersey iQuê de manga curta branca com detalhes laranja, tamanho PP. Zíper inteiro e bolsos traseiros.",specs:[["Tamanho","PP"],["Marca","iQuê"]]},
+ {id:"09",cat:"roupa",name:"Jersey térmica iQuê Peludinho",size:"PP feminina",price:600,novo:1147,novoNote:"Peludinho preta feminina no site da iQuê",photos:3,
+  desc:"Jersey térmica de manga longa iQuê Peludinho, preta, com interior felpudo para dias frios. Etiqueta do modelo visível nas fotos.",specs:[["Tamanho","PP"],["Modelagem","Feminina"],["Marca","iQuê"],["Uso","Frio"]]},
+ {id:"08",cat:"roupa",name:"Bretelle iQuê preto/grafite",size:"P",price:450,novo:997,novoNote:"bretele iQuê Pro preto atual",photos:6,
+  desc:"Bretelle iQuê preto com detalhes grafite, alças largas e forro para pedais longos.",specs:[["Tamanho","P"],["Marca","iQuê"]]},
+ {id:"10",cat:"roupa",name:"Bretelle iQuê bege",size:"P",price:550,novo:1347,novoNote:"bretele iQuê Pro II Nutela atual, modelo equivalente",photos:3,
+  desc:"Bretelle iQuê bege com alças pretas e logo na perna. Forro em bom estado.",specs:[["Tamanho","P"],["Marca","iQuê"]]},
+ {id:"11",cat:"roupa",name:"Macaquinho Woom Carbon preto",size:"GG / XL",price:500,novo:999.9,novoNote:"macaquinho Woom Carbon atual com manga",photos:3,
+  desc:"Macaquinho de triathlon Woom da linha Carbon, preto, com manga. Peça única para natação, pedal e corrida.",specs:[["Tamanho","GG / XL"],["Marca","Woom"],["Modelo","Carbon com manga"],["Modelagem","Masculina"]]},
+ {id:"17",cat:"roupa",name:"Macaquinho Kupaa BR Esportes",size:"M",price:300,photos:3,
+  desc:"Macaquinho de triathlon Kupaa com personalização da assessoria BR Esportes, preto com cinza e verde.",specs:[["Tamanho","M"],["Marca","Kupaa"],["Personalização","BR Esportes"]]},
+ {id:"18",cat:"roupa",name:"Macaquinho Kupaa BR Esportes",size:"P",price:300,photos:3,
+  desc:"Macaquinho de triathlon Kupaa com personalização da assessoria BR Esportes, preto com cinza e verde.",specs:[["Tamanho","P"],["Marca","Kupaa"],["Personalização","BR Esportes"]]},
+ {id:"07",cat:"roupa",name:"Jersey Nomad feminina azul-marinho",size:"P feminina",price:200,novo:279,novoNote:"jersey Nomad Core feminina atual",photos:3,
+  desc:"Jersey Nomad feminina de manga curta, azul-marinho, com logo M nas costas. Combina com o bretelle Nomad feminino P.",specs:[["Tamanho","P"],["Modelagem","Feminina"],["Marca","Nomad"]]},
+ {id:"06",cat:"roupa",name:"Bretelle Nomad feminino azul-marinho",size:"P feminino",price:300,novo:399,novoNote:"bretelle Nomad Core feminino atual",photos:2,
+  desc:"Bretelle Nomad feminino azul-marinho com alças em tela vazada. Combina com a jersey Nomad feminina P.",specs:[["Tamanho","P"],["Modelagem","Feminina"],["Marca","Nomad"]]},
+ {id:"12",cat:"roupa",name:"Jersey Nomad masculina azul-marinho",size:"G",price:200,novo:279,novoNote:"jersey Nomad Core masculina atual",photos:3,
+  desc:"Jersey Nomad masculina de manga curta, azul-marinho, com logo M nas costas.",specs:[["Tamanho","G"],["Modelagem","Masculina"],["Marca","Nomad"]]},
+ {id:"14",cat:"roupa",name:"Bretelle Nomad masculino azul-marinho",size:"M",price:300,novo:399,novoNote:"bretelle Nomad Core masculino atual",photos:2,
+  desc:"Bretelle Nomad masculino azul-marinho com alças em tela vazada.",specs:[["Tamanho","M"],["Modelagem","Masculina"],["Marca","Nomad"]]},
+ {id:"13",cat:"roupa",name:"Jaqueta leve Nomad feminina preta",size:"P feminina",price:300,novo:599,novoNote:"jaqueta corta vento Nomad Apex feminina atual",photos:3,
+  desc:"Jaqueta leve Nomad preta para pedal, com zíper inteiro e estampa Nomad Allroad Cycling Gear nas costas.",specs:[["Tamanho","P"],["Modelagem","Feminina"],["Marca","Nomad"]]},
+ {id:"15",cat:"roupa",name:"Jaqueta leve Nomad masculina preta",size:"M",price:300,novo:599,novoNote:"jaqueta corta vento Nomad Apex masculina atual",photos:3,
+  desc:"Jaqueta leve Nomad preta para pedal, com zíper inteiro e logo Nomad no peito.",specs:[["Tamanho","M"],["Modelagem","Masculina"],["Marca","Nomad"]]},
+ {id:"19",cat:"capacete",name:"Capacete Specialized Propero 4 Mips",size:"L · 58 a 62 cm",price:850,novo:1490,novoNote:"Propero 4 novo no site da Specialized Brasil",photos:8,
+  desc:"Capacete de estrada Specialized Propero 4 com Mips, branco, leve e bem ventilado. Etiqueta interna com tamanho nas fotos.",specs:[["Tamanho","L, 58 a 62 cm"],["Cor","Branco"],["Proteção","Mips"]]},
+ {id:"20",cat:"capacete",name:"Capacete Specialized Propero 4 Mips",size:"S · 51 a 56 cm",price:850,novo:1490,novoNote:"Propero 4 novo no site da Specialized Brasil",photos:5,
+  desc:"Capacete de estrada Specialized Propero 4 com Mips, branco, tamanho S. Etiqueta interna com tamanho nas fotos.",specs:[["Tamanho","S, 51 a 56 cm"],["Cor","Branco"],["Proteção","Mips"]]},
+ {id:"21",cat:"capacete",name:"Capacete Oakley ARO5 Mips",size:"L · 56 a 60 cm",price:350,novo:879.6,novoNote:"ARO5 Blackout no site da Oakley, esgotado",photos:7,
+  desc:"Capacete aero Oakley ARO5 com Mips e ajuste BOA, preto fosco. Código FOS900148, fabricação 11/2021. Marcas leves de uso na casca, visíveis nas fotos.",specs:[["Tamanho","L, 56 a 60 cm"],["Cor","Preto"],["Proteção","Mips"],["Ajuste","BOA"]]},
+ {id:"22",cat:"capacete",name:"Capacete Giro Revel",size:"54 a 61 cm",price:180,photos:7,
+  desc:"Capacete Giro Revel preto com cinza, tamanho único ajustável. Fabricação 12/2022.",specs:[["Tamanho","54 a 61 cm"],["Cor","Preto e cinza"]]},
+ {id:"26",cat:"sapatilha",name:"Sapatilha Specialized Torch 1.0 BOA",size:"EU 44 · 28,3 cm",price:500,novo:790,novoNote:"Torch 1.0 BOA nova no site da Specialized Brasil",photos:5,
+  desc:"Sapatilha de estrada Specialized Torch 1.0 branca com fechamento BOA. Vai com os tacos instalados.",specs:[["Tamanho","EU 44 (28,3 cm)"],["Cor","Branca"],["Fechamento","BOA"],["Tacos","Instalados"]]},
+ {id:"24",cat:"sapatilha",name:"Sapatilha Bontrager Solstice",size:"EU 44 · 28,3 cm",price:300,photos:6,
+  desc:"Sapatilha de estrada Bontrager Solstice preta com duas tiras de velcro. Vai com os tacos instalados.",specs:[["Tamanho","EU 44 (28,3 cm)"],["Cor","Preta"],["Fechamento","Velcro"],["Tacos","Instalados"]]},
+ {id:"25",cat:"sapatilha",name:"Sapatilha Shimano RP1 (SH-RP101)",size:"EU 40 · 25,2 cm",price:250,photos:4,
+  desc:"Sapatilha de estrada Shimano RP1 preta com velcro. Acompanha tacos amarelos. Sinais normais de uso no solado.",specs:[["Tamanho","EU 40 (25,2 cm)"],["Cor","Preta"],["Fechamento","Velcro"],["Tacos","Amarelos, incluídos"]]},
+ {id:"28",cat:"acess",name:"Garmin Edge 540",size:"Ciclocomputador GPS",price:2200,novo:4299,novoNote:"Edge 540 na loja oficial Garmin Brasil, esgotado",photos:[ "00","11","12"],
+  desc:"Ciclocomputador GPS Garmin Edge 540 versão Standard (sem Solar), com botões, mapas e métricas de treino. Acompanha suporte e cabo.",specs:[["Modelo","Edge 540 Standard"],["Versão","Sem Solar"],["Acompanha","Suporte e cabo"]]},
+ {id:"A01",cat:"acess",name:"Pedais Look Kéo Classic 3",size:"Par",price:350,photos:["00"],
+  desc:"Par de pedais clip de estrada Look Kéo Classic 3, que vieram com a Madone.",specs:[["Quantidade","1 par"],["Sistema","Look Kéo"]]},
+ {id:"A02",cat:"acess",name:"2 conjuntos Trek RSL Aero",size:"2 caramanholas + 2 suportes",price:1100,novo:1750,novoNote:"2 conjuntos novos a R$ 875 cada no site da Trek",photos:["00","11","12"],
+  desc:"Dois conjuntos Trek RSL Aero, cada um com caramanhola aero de 595 ml e suporte, feitos para a Madone.",specs:[["Quantidade","2 conjuntos"],["Caramanhola","595 ml"]]},
+ {id:"27",cat:"acess",name:"Bomba de chão Tramontina",size:"Com manômetro",price:80,novo:177.79,novoNote:"bomba 43132/001 nova no site da Tramontina",photos:4,
+  desc:"Bomba de ar de chão Tramontina com manômetro, modelo 43132/001, até 160 PSI.",specs:[["Modelo","43132/001"],["Manômetro","Sim"]]},
+ {id:"A03",cat:"acess",name:"Suporte de chão para bicicleta",size:"Unidade",price:90,photos:["00"],
+  desc:"Suporte de chão tipo estacionamento para apoiar a roda da bicicleta. Preço por unidade.",specs:[["Quantidade","1 unidade"]]},
+ {id:"23",cat:"acess",name:"Kit de ferramentas com mini bomba",size:"Estojo",price:35,photos:2,
+  desc:"Estojo compacto com mini bomba e ferramentas para reparo no pedal.",specs:[["Inclui","Estojo, mini bomba e ferramentas"]]}
+];
+const STATUS = {}; /* ex.: {"02":"vendido","19":"reservado"} */
+
+ITEMS.forEach(it=>{
+  it.status = STATUS[it.id] || "disponivel";
+  const list = Array.isArray(it.photos) ? it.photos : Array.from({length:it.photos},(_,i)=>String(i+1).padStart(2,"0"));
+  it.full = list.map(p=>`fotos/${it.id}/${p}.jpg`);
+  it.thumb = list.map(p=>`fotos/${it.id}/${p}_t.jpg`);
+});
+const byId = Object.fromEntries(ITEMS.map(i=>[i.id,i]));
+const brl = v => "R$ " + v.toLocaleString("pt-BR",{minimumFractionDigits: v%1?2:0, maximumFractionDigits:2});
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = s => document.querySelector(s);
+
+/* sacola guardada só neste navegador */
+let cart = [];
+try{ cart = JSON.parse(localStorage.getItem("dp-cart")||"[]").filter(id=>byId[id] && byId[id].status==="disponivel"); }catch(e){ cart=[]; }
+const saveCart = () => { try{ localStorage.setItem("dp-cart",JSON.stringify(cart)); }catch(e){} };
+
+let cat = "all", size = "all";
+const SIZE_OPTS = ["PP","P","M","G","GG"];
+const sizeKey = it => it.cat!=="roupa" ? null : (it.size.match(/^(PP|P|M|G|GG)/)||[])[1];
+
+function renderFilters(){
+  const counts = {all:ITEMS.length}; ITEMS.forEach(i=>counts[i.cat]=(counts[i.cat]||0)+1);
+  $("#cats").innerHTML = [["all","Tudo"],...Object.entries(CATS)].map(([k,l])=>
+    `<button type="button" class="chip" data-cat="${k}" aria-pressed="${cat===k}">${l}<span class="n">${counts[k]||0}</span></button>`).join("");
+  const showSizes = cat==="roupa";
+  $("#sizes").hidden = !showSizes;
+  $("#sizes").innerHTML = showSizes ? [["all","Todos os tamanhos"],...SIZE_OPTS.map(s=>[s,s])].map(([k,l])=>
+    `<button type="button" class="chip" data-size="${k}" aria-pressed="${size===k}">${l}</button>`).join("") : "";
+}
+function card(it){
+  const st = it.status!=="disponivel" ? `<span class="status ${it.status}">${it.status==="vendido"?"Vendido":"Reservado"}</span>` : "";
+  return `<button type="button" class="card is-${it.status}" data-open="${it.id}" aria-label="${esc(it.name)}, ${esc(it.size)}, ${brl(it.price)}">
+    <div class="ph"><img loading="lazy" src="${it.thumb[0]}" alt=""><span class="bib">#${it.id}</span>${st}</div>
+    <div class="body"><div class="name">${esc(it.name)}</div><div class="size">${esc(it.size)}</div>
+    <div class="price"><strong>${brl(it.price)}</strong><span>no Pix</span></div>
+    <div class="inst">ou até 12x no cartão</div></div></button>`;
+}
+function renderList(){
+  let items = ITEMS.filter(i=>cat==="all"||i.cat===cat);
+  if(cat==="roupa" && size!=="all") items = items.filter(i=>sizeKey(i)===size);
+  const groups = cat==="all" ? Object.keys(CATS) : [cat];
+  const html = groups.map(g=>{
+    const gi = items.filter(i=>i.cat===g); if(!gi.length) return "";
+    return `<h2 class="section-h">${CATS[g]} <small>${gi.length} ${gi.length>1?"itens":"item"}</small></h2><div class="grid">${gi.map(card).join("")}</div>`;
+  }).join("");
+  $("#list").innerHTML = html || `<p class="empty">Nenhum item neste tamanho. Toque em “Todos os tamanhos” para ver o restante.</p>`;
+}
+function renderAll(){ renderFilters(); renderList(); renderCartCount(); }
+
+document.addEventListener("click", e=>{
+  const c = e.target.closest("[data-cat]"); if(c){ cat=c.dataset.cat; size="all"; renderFilters(); renderList(); return; }
+  const s = e.target.closest("[data-size]"); if(s){ size=s.dataset.size; renderFilters(); renderList(); return; }
+  const o = e.target.closest("[data-open]"); if(o){ openProduct(o.dataset.open); return; }
+  if(e.target.closest("[data-close]")){ e.target.closest("dialog").close(); }
+});
+
+/* Produto */
+function openProduct(id){
+  const it = byId[id], avail = it.status==="disponivel", inCart = cart.includes(id);
+  const ref = it.novo ? `<p class="ref">Novo: ${brl(it.novo)} (${esc(it.novoNote)}).</p>` : "";
+  $("#pd-body").innerHTML = `<button class="close" type="button" data-close aria-label="Fechar">×</button>
+   <div class="pd">
+    <div class="gallery">
+      <div class="slides" id="slides">${it.full.map((src,i)=>`<img src="${src}" alt="${esc(it.name)}, foto ${i+1} de ${it.full.length}" loading="${i?"lazy":"eager"}">`).join("")}</div>
+      ${it.full.length>1?`<div class="thumbs">${it.thumb.map((src,i)=>`<button type="button" data-go="${i}" aria-label="Foto ${i+1}" aria-current="${i===0}"><img src="${src}" alt=""></button>`).join("")}</div>`:""}
+    </div>
+    <div class="info">
+      <div class="eyebrow" style="color:var(--muted)">#${it.id} · ${CATS[it.cat]}</div>
+      <h2 id="pd-title">${esc(it.name)}</h2>
+      <div><div class="price"><strong>${brl(it.price)}</strong><span>no Pix</span></div><div class="inst">ou em até 12x no cartão pelo link InfinitePay, com juros das parcelas</div></div>
+      ${!avail?`<p class="ref" style="border-color:var(--warn)">${it.status==="vendido"?"Este item já foi vendido.":"Este item está reservado. Chame no WhatsApp para entrar na fila."}</p>`:""}
+      <p class="desc">${esc(it.desc)}</p>
+      <dl class="specs">${it.specs.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}<dt>Estado</dt><dd>Usado, em perfeito estado</dd></dl>
+      ${it.extra?`<p class="ref">${esc(it.extra)}</p>`:""}
+      ${ref}
+      <div class="actions">
+        <button type="button" class="btn primary" id="add" ${avail?"":"disabled"}>${inCart?"Ver na sacola":"Adicionar à sacola"}</button>
+        <a class="btn" id="buy1" target="_blank" rel="noopener" href="${waLink([id],"pix","","")}" ${avail?"":'aria-disabled="true" style="pointer-events:none;opacity:.45"'}>Pedir só este</a>
+      </div>
+    </div>
+   </div>`;
+  const slides = $("#slides");
+  $("#pd-body").querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>slides.scrollTo({left:slides.clientWidth*+b.dataset.go,behavior:"smooth"})));
+  slides.addEventListener("scroll",()=>{const i=Math.round(slides.scrollLeft/slides.clientWidth);$("#pd-body").querySelectorAll("[data-go]").forEach(b=>b.setAttribute("aria-current",+b.dataset.go===i));},{passive:true});
+  $("#add").addEventListener("click",()=>{
+    if(!cart.includes(id)){ cart.push(id); saveCart(); renderCartCount(); toast("Adicionado à sacola"); $("#add").textContent="Ver na sacola"; }
+    else { $("#pd").close(); openCart(); }
+  });
+  $("#pd").showModal(); slides.scrollLeft=0;
+}
+
+/* Sacola */
+function renderCartCount(){ $("#cart-count").textContent = cart.length; }
+function total(){ return cart.reduce((s,id)=>s+byId[id].price,0); }
+function message(ids,pay,name,obs){
+  const lines = ids.map(id=>{const i=byId[id];return `• #${i.id} ${i.name} (${i.size}) · ${brl(i.price)}`;});
+  const t = ids.reduce((s,id)=>s+byId[id].price,0);
+  return [`Olá! Vim pelo catálogo Desapego do Pedal e tenho interesse ${ids.length>1?"nestes itens":"neste item"}:`,"",...lines,"",
+    `Total no Pix: ${brl(t)}`,
+    `Pagamento: ${pay==="card"?"cartão em até 12x (link InfinitePay)":"Pix"}`,
+    name?`Nome: ${name}`:null, obs?`Obs.: ${obs}`:null, "Retirada em São Paulo."].filter(x=>x!==null).join("\n");
+}
+function waLink(ids,pay,name,obs){ return `https://wa.me/${WA}?text=${encodeURIComponent(message(ids,pay,name,obs))}`; }
+function currentPay(){ return document.querySelector('input[name="pay"]:checked').value; }
+function updateWa(){
+  const ok = cart.length>0;
+  $("#wa").href = ok ? waLink(cart,currentPay(),$("#buyer").value.trim(),$("#obs").value.trim()) : "#";
+  $("#wa").setAttribute("aria-disabled",!ok); $("#wa").style.pointerEvents = ok?"":"none"; $("#wa").style.opacity = ok?"":".45";
+}
+function renderCart(){
+  $("#cart-list").innerHTML = cart.length ? cart.map(id=>{const i=byId[id];return `<div class="line"><img src="${i.thumb[0]}" alt="">
+    <div><div class="t">${esc(i.name)}</div><div class="s">#${i.id} · ${esc(i.size)}</div><button type="button" class="rm" data-rm="${id}">Remover</button></div>
+    <div class="v">${brl(i.price)}</div></div>`;}).join("")
+    : `<p class="empty">Sua sacola está vazia. Abra um item e toque em “Adicionar à sacola”.</p>`;
+  $("#cart-total").textContent = brl(total());
+  updateWa();
+}
+function openCart(){ renderCart(); $("#cart").showModal(); }
+$("#open-cart").addEventListener("click",openCart);
+$("#cart-list").addEventListener("click",e=>{const b=e.target.closest("[data-rm]"); if(!b) return; cart=cart.filter(x=>x!==b.dataset.rm); saveCart(); renderCart(); renderCartCount();});
+["input","change"].forEach(ev=>$("#checkout").addEventListener(ev,updateWa));
+$("#checkout").addEventListener("submit",e=>e.preventDefault());
+$("#copy").addEventListener("click",()=>{
+  const txt = message(cart,currentPay(),$("#buyer").value.trim(),$("#obs").value.trim());
+  if(!cart.length){ toast("Adicione um item primeiro"); return; }
+  navigator.clipboard?.writeText(txt).then(()=>toast("Pedido copiado"),()=>toast("Não foi possível copiar. Selecione o número e envie os itens manualmente."));
+});
+["pd","cart"].forEach(id=>{const d=document.getElementById(id); d.addEventListener("click",e=>{if(e.target===d) d.close();});});
+
+let tt; function toast(m){ const t=$("#toast"); t.textContent=m; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,2200); }
+
+$("#f-n").textContent = ITEMS.length;
+renderAll();
+</script>
+
+</body>
+</html>

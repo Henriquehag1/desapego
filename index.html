@@ -296,8 +296,8 @@ const ITEMS = [
   desc:"Dois conjuntos Trek RSL Aero, cada um com caramanhola aero de 595 ml e suporte, feitos para a Madone.",specs:[["Quantidade","2 conjuntos"],["Caramanhola","595 ml"]]},
  {id:"27",cat:"acess",name:"Bomba de chão Tramontina",size:"Com manômetro",price:80,novo:177.79,novoNote:"bomba 43132/001 nova no site da Tramontina",photos:4,
   desc:"Bomba de ar de chão Tramontina com manômetro, modelo 43132/001, até 160 PSI.",specs:[["Modelo","43132/001"],["Manômetro","Sim"]]},
- {id:"A03",cat:"acess",name:"Suporte de chão para bicicleta",size:"Unidade",price:90,photos:["00"],
-  desc:"Suporte de chão tipo estacionamento para apoiar a roda da bicicleta. Preço por unidade.",specs:[["Quantidade","1 unidade"]]},
+ {id:"A03",cat:"acess",name:"Suporte de chão para bicicleta",size:"2 unidades disponíveis",price:90,stock:2,photos:["00"],
+  desc:"Suporte de chão tipo estacionamento para apoiar a roda da bicicleta. Tenho duas unidades iguais; o preço é por unidade e dá para levar uma ou as duas.",specs:[["Disponível","2 unidades"],["Preço","R$ 90 cada"]]},
  {id:"23",cat:"acess",name:"Kit de ferramentas com mini bomba",size:"Estojo",price:35,photos:2,
   desc:"Estojo compacto com mini bomba e ferramentas para reparo no pedal.",specs:[["Inclui","Estojo, mini bomba e ferramentas"]]}
 ];
@@ -322,6 +322,10 @@ const $ = s => document.querySelector(s);
 /* sacola guardada só neste navegador */
 let cart = [];
 try{ cart = JSON.parse(localStorage.getItem("dp-cart")||"[]").filter(id=>byId[id] && byId[id].status==="disponivel"); }catch(e){ cart=[]; }
+const stockOf = id => byId[id].stock||1;
+const qtyIn = id => cart.filter(x=>x===id).length;
+cart = cart.filter((id,i)=>cart.slice(0,i).filter(x=>x===id).length < stockOf(id));
+const groupIds = ids => { const m=new Map(); ids.forEach(id=>m.set(id,(m.get(id)||0)+1)); return [...m.entries()]; };
 const saveCart = () => { try{ localStorage.setItem("dp-cart",JSON.stringify(cart)); }catch(e){} };
 
 let cat = "all", size = "all", gen = "all";
@@ -371,7 +375,8 @@ document.addEventListener("click", e=>{
 
 /* Produto */
 function openProduct(id){
-  const it = byId[id], avail = it.status==="disponivel", inCart = cart.includes(id);
+  const it = byId[id], avail = it.status==="disponivel", stock = stockOf(id);
+  const addLabel = () => { const q=qtyIn(id); return q>=stock ? "Ver na sacola" : (q ? `Adicionar mais uma (${q} de ${stock} na sacola)` : "Adicionar à sacola"); };
   const ref = it.novo ? `<p class="ref">Novo: ${brl(it.novo)} (${esc(it.novoNote)}).</p>` : "";
   $("#pd-body").innerHTML = `<button class="close" type="button" data-close aria-label="Fechar">×</button>
    <div class="pd">
@@ -389,7 +394,7 @@ function openProduct(id){
       ${it.extra?`<p class="ref">${esc(it.extra)}</p>`:""}
       ${ref}
       <div class="actions">
-        <button type="button" class="btn primary" id="add" ${avail?"":"disabled"}>${inCart?"Ver na sacola":"Adicionar à sacola"}</button>
+        <button type="button" class="btn primary" id="add" ${avail?"":"disabled"}>${addLabel()}</button>
         <a class="btn" id="buy1" target="_blank" rel="noopener" href="${waLink([id],"pix","","")}" ${avail?"":'aria-disabled="true" style="pointer-events:none;opacity:.45"'}>Pedir só este</a>
       </div>
     </div>
@@ -398,7 +403,7 @@ function openProduct(id){
   $("#pd-body").querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>slides.scrollTo({left:slides.clientWidth*+b.dataset.go,behavior:"smooth"})));
   slides.addEventListener("scroll",()=>{const i=Math.round(slides.scrollLeft/slides.clientWidth);$("#pd-body").querySelectorAll("[data-go]").forEach(b=>b.setAttribute("aria-current",+b.dataset.go===i));},{passive:true});
   $("#add").addEventListener("click",()=>{
-    if(!cart.includes(id)){ cart.push(id); saveCart(); renderCartCount(); toast("Adicionado à sacola"); $("#add").textContent="Ver na sacola"; }
+    if(qtyIn(id) < stock){ cart.push(id); saveCart(); renderCartCount(); toast(stock>1?`Adicionado à sacola (${qtyIn(id)} de ${stock})`:"Adicionado à sacola"); $("#add").textContent=addLabel(); }
     else { $("#pd").close(); openCart(); }
   });
   $("#pd").showModal(); slides.scrollLeft=0;
@@ -408,7 +413,7 @@ function openProduct(id){
 function renderCartCount(){ $("#cart-count").textContent = cart.length; }
 function total(){ return cart.reduce((s,id)=>s+byId[id].price,0); }
 function message(ids,pay,name,obs){
-  const lines = ids.map(id=>{const i=byId[id];return `• #${i.id} ${i.name} (${i.size}) · ${brl(i.price)}`;});
+  const lines = groupIds(ids).map(([id,q])=>{const i=byId[id];return q>1 ? `• #${i.id} ${i.name} · ${q} unidades x ${brl(i.price)} = ${brl(q*i.price)}` : `• #${i.id} ${i.name} (${(i.stock||1)>1?"1 unidade":i.size}) · ${brl(i.price)}`;});
   const t = ids.reduce((s,id)=>s+byId[id].price,0);
   return [`Olá! Vim pelo catálogo Desapego do Pedal e tenho interesse ${ids.length>1?"nestes itens":"neste item"}:`,"",...lines,"",
     `Total no Pix: ${brl(t)}`,
@@ -423,16 +428,16 @@ function updateWa(){
   $("#wa").setAttribute("aria-disabled",!ok); $("#wa").style.pointerEvents = ok?"":"none"; $("#wa").style.opacity = ok?"":".45";
 }
 function renderCart(){
-  $("#cart-list").innerHTML = cart.length ? cart.map(id=>{const i=byId[id];return `<div class="line"><img src="${i.thumb[0]}" alt="">
-    <div><div class="t">${esc(i.name)}</div><div class="s">#${i.id} · ${esc(i.size)}</div><button type="button" class="rm" data-rm="${id}">Remover</button></div>
-    <div class="v">${brl(i.price)}</div></div>`;}).join("")
+  $("#cart-list").innerHTML = cart.length ? groupIds(cart).map(([id,q])=>{const i=byId[id];return `<div class="line"><img src="${i.thumb[0]}" alt="">
+    <div><div class="t">${esc(i.name)}</div><div class="s">#${i.id} · ${q>1?`${q} unidades, ${brl(i.price)} cada`:((i.stock||1)>1?`1 unidade (há ${i.stock} disponíveis)`:esc(i.size))}</div><button type="button" class="rm" data-rm="${id}">${q>1?"Remover uma":"Remover"}</button></div>
+    <div class="v">${brl(q*i.price)}</div></div>`;}).join("")
     : `<p class="empty">Sua sacola está vazia. Abra um item e toque em “Adicionar à sacola”.</p>`;
   $("#cart-total").textContent = brl(total());
   updateWa();
 }
 function openCart(){ renderCart(); $("#cart").showModal(); }
 $("#open-cart").addEventListener("click",openCart);
-$("#cart-list").addEventListener("click",e=>{const b=e.target.closest("[data-rm]"); if(!b) return; cart=cart.filter(x=>x!==b.dataset.rm); saveCart(); renderCart(); renderCartCount();});
+$("#cart-list").addEventListener("click",e=>{const b=e.target.closest("[data-rm]"); if(!b) return; const k=cart.lastIndexOf(b.dataset.rm); if(k>=0) cart.splice(k,1); saveCart(); renderCart(); renderCartCount();});
 ["input","change"].forEach(ev=>$("#checkout").addEventListener(ev,updateWa));
 $("#checkout").addEventListener("submit",e=>e.preventDefault());
 $("#copy").addEventListener("click",()=>{
